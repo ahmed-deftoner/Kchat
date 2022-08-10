@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./ChatHistory.scss";
 
 interface IProps {
@@ -6,16 +6,23 @@ interface IProps {
 }
 
 const ChatHistory:React.FC<IProps> = ({data}) => {
+    const [list, setlist] = useState<string[]>(data)
 
+    useEffect(() => {
+        
+    }, [list])
+    
 
     function send(){
-        console.log(data)
+        console.log(list)
+        list.push("hello")
+        setlist(list)
     }
 
     return (
         <div className="ChatHistory">
           <h2>Chat History</h2>
-          {data.map((msg, index) => (
+          {list.map((msg, index) => (
            <p key={index}>{msg}</p>
           ))
          }
