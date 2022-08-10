@@ -50,6 +50,7 @@ func SetupRouter() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("simple server")
 	})
+	http.HandleFunc("/ws", serveWs)
 }
 
 func main() {
