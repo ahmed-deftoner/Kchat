@@ -14,7 +14,6 @@ const ChatHistory:React.FC<IProps> = ({data}) => {
            <p key={index}>{msg}</p>
           ))
          }
-         <button onClick={send}>hehe</button>
         </div>
     );
 }
