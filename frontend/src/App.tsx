@@ -12,19 +12,18 @@ function App() {
   useEffect(() => {
      connect((msg:string) => {
       console.log("New Message")
-      chatHistory.push(msg)
-      setchatHistory(chatHistory)
       console.log(msg)
       console.log(chatHistory);
     })
   
-  }, [msg, chatHistory])
+  }, [chatHistory])
   
 
   function send() {
-    setmsg("hello");
-    console.log(msg);
     sendMsg(msg);
+    chatHistory.push(msg)
+    let newhis = [...chatHistory]
+    setchatHistory(newhis)
   }
 
   return (
