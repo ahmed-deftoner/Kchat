@@ -20,7 +20,7 @@ let connect = () => {
   };
 };
 
-let sendMsg = (msg: string | ArrayBuffer | Blob | ArrayBufferView) => {
+let sendMsg = (msg: string) => {
   console.log("sending msg: ", msg);
   socket.send(msg);
 };

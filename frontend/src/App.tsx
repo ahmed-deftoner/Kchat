@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { sendMsg, connect} from '../api/index'
+import Header from '../components/header/header'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header/>
       <button onClick={send}>Hit</button>
     </div>
   )
