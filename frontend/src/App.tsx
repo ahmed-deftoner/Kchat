@@ -6,21 +6,23 @@ import Header from '../components/header/header'
 import ChatHistory from '../components/ChatHistory/ChatHistory'
 
 function App() {
+  const [msg, setmsg] = useState<string>("Hello")
   const [chatHistory, setchatHistory] = useState<Array<string>>([])
 
   useEffect(() => {
      connect((msg) => {
       console.log("New Message")
-      setchatHistory([...chatHistory,msg])
+      setchatHistory([...chatHistory,msg as string])
       console.log(chatHistory);
     })
   
-  }, [])
+  }, [msg])
   
 
   function send() {
-    console.log("hello");
-    sendMsg("hello");
+    setmsg("hello");
+    console.log(msg);
+    sendMsg(msg);
   }
 
   return (
