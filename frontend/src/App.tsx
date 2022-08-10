@@ -5,7 +5,6 @@ import { sendMsg, connect} from '../api/index'
 import Header from '../components/header/header'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   function send() {
     console.log("hello");
