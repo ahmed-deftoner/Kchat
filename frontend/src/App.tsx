@@ -10,13 +10,14 @@ function App() {
   const [chatHistory, setchatHistory] = useState<Array<string>>([])
 
   useEffect(() => {
-     connect((msg) => {
+     connect((msg:string) => {
       console.log("New Message")
-      setchatHistory([...chatHistory,msg as string])
+      chatHistory.push(msg)
+      console.log(msg)
       console.log(chatHistory);
     })
   
-  }, [msg])
+  }, [msg, chatHistory])
   
 
   function send() {

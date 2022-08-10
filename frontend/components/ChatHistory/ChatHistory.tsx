@@ -3,6 +3,11 @@ import "./ChatHistory.scss";
 
 const ChatHistory = (props:Array<string>) => {
     const data = Array.from(props)
+
+    function send(){
+        console.log(data)
+    }
+
     return (
         <div className="ChatHistory">
           <h2>Chat History</h2>
@@ -10,6 +15,7 @@ const ChatHistory = (props:Array<string>) => {
            <p key={index}>{msg}</p>
           ))
          }
+         <button onClick={send}>hehe</button>
         </div>
     );
 }
