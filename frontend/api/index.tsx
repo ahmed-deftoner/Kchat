@@ -1,6 +1,6 @@
 var socket = new WebSocket("ws://localhost:8080/ws");
 
-let connect = cb => {
+let connect = (cb: { (msg: string): void; (arg0: MessageEvent<any>): void; }) => {
   console.log("connecting");
 
   socket.onopen = () => {
