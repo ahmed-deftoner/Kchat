@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import "./ChatHistory.scss";
 
-const ChatHistory = (props:Array<string>) => {
-    const data = Array.from(props)
+interface IProps {
+    data: string[]
+}
+
+const ChatHistory:React.FC<IProps> = ({data}) => {
+
 
     function send(){
         console.log(data)
